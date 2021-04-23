@@ -1,6 +1,7 @@
 # Tema2ASC-MatrixMultiplier
 [Tema2 - Arhitectura Sistemelor de Calcul] 
-Optimizarea unei operatii de inmultire de matrici in 3 moduri.
+Optimizarea unei operatii de inmultire de matrici in 3 moduri. <br>
+Enuntul se gaseste [aici](https://ocw.cs.pub.ro/courses/asc/teme/tema2).
 
 ## Descriere 
 Se dă următoarea operație cu matrice, unde A si B sunt matrice patratice NxN, iar A este matrice **superior triunghiulara**:
