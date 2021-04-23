@@ -3,7 +3,7 @@
 Optimizarea unei operatii de inmultire de matrici in 3 moduri.
 
 ## Descriere 
-Se dă următoarea operație cu matrice, unde A si B sunt matrice patratice NxN, iar A este matrice **superior triunghiulara**.
+Se dă următoarea operație cu matrice, unde A si B sunt matrice patratice NxN, iar A este matrice **superior triunghiulara**:
 > C = A × B × B<sup>t</sup> + A<sup>t</sup> × A
 
 Se dorește implementarea operației de mai sus in C/C++ în 3 moduri:
