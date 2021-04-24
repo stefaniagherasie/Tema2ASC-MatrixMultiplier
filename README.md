@@ -1,6 +1,6 @@
 # Tema2ASC-MatrixMultiplier
-[Tema2 - Arhitectura Sistemelor de Calcul] 
-Optimizarea unei operatii de inmultire de matrici in 3 moduri. <br>
+[Tema2 - Arhitectura Sistemelor de Calcul] <br>
+Tema presupune realizarea unei operatii de inmultire de matrici in 3 moduri. <br>
 Enuntul se gaseste [aici](https://ocw.cs.pub.ro/courses/asc/teme/tema2).
 
 ## Descriere 
@@ -23,7 +23,7 @@ Tema are urmatoarea organizare:
 - `compare.c` - utilitar ce poate fi folosit pentru a compara doua fisiere rezultat
 
 ## Rulare si Testare
-În urma rulării comenzii `make` vor rezulta 3 fișere binare: `tema2_blas`, `tema2_neopt` si `tema2_opt_m`.
+În urma rulării comenzii `make` vor rezulta 3 fișiere binare: `tema2_blas`, `tema2_neopt` si `tema2_opt_m`.
 ```shell
     ./tema2_<mod> <input_file> 
 ```
