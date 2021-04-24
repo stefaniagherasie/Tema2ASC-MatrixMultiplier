@@ -41,16 +41,16 @@ double* my_solver(int N, double *A, double *B) {
 	// M = A * B
 	cblas_dtrmm(
 		CblasRowMajor,		// Row major
-		CblasLeft, 		// Side left
-		CblasUpper,		// X is upper triungular matrix
+		CblasLeft, 			// Side left
+		CblasUpper,			// X is upper triungular matrix
 		CblasNoTrans,		// op( X ) = A
 		CblasNonUnit,		// X is not assumed to be unit triangular
 		N,
 		N,
-		1.0,			// alpha = 1.0
-		A,			// X = A
+		1.0,				// alpha = 1.0
+		A,					// X = A
 		N,
-		M,			// Y = M = B
+		M,					// Y = M = B
 		N 
 	);
 
@@ -62,16 +62,16 @@ double* my_solver(int N, double *A, double *B) {
 	// P = At * A;
 	cblas_dtrmm(
 		CblasRowMajor,		// Row major
-		CblasLeft, 		// Side left
-		CblasUpper,		// X is upper triungular matrix
-		CblasTrans,		// op( X ) = At
+		CblasLeft, 			// Side left
+		CblasUpper,			// X is upper triungular matrix
+		CblasTrans,			// op( X ) = At
 		CblasNonUnit,		// X is not assumed to be unit triangular
 		N,
 		N,
-		1.0,			// alpha = 1.0
-		A,			// X = A
+		1.0,				// alpha = 1.0
+		A,					// X = A
 		N,
-		P,			// Y = P = A
+		P,					// Y = P = A
 		N
 	);
 
@@ -82,17 +82,17 @@ double* my_solver(int N, double *A, double *B) {
 	cblas_dgemm(
 		CblasRowMajor,		// Row major
 		CblasNoTrans,		// op( X ) = M
-		CblasTrans,		// op( Y ) = Bt
+		CblasTrans,			// op( Y ) = Bti
 		N,
 		N,
 		N,
-		1.0,			// alpha = 1.0
-		M,			// X = M
+		1.0,				// alpha = 1.0
+		M,					// X = M
 		N,
-		B,			// Y = B
+		B,					// Y = B
 		N,
-		1.0,			// beta = 1.0
-		P,			// Z = P
+		1.0,				// beta = 1.0
+		P,					// Z = P
 		N
 	);
 
