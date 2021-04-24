@@ -2,6 +2,7 @@
  * Tema 2 ASC
  * 2021 Spring
  */
+
 #include <cblas.h>
 #include "utils.h"
 
@@ -18,6 +19,7 @@ double* make_copy(int N, double *mat) {
 
 	return copy_mat;
 }
+
 
 /* 
  * Add your BLAS implementation here
@@ -38,18 +40,19 @@ double* my_solver(int N, double *A, double *B) {
 	// Y := alpha*op( X )*Y
 	// M = A * B
 	cblas_dtrmm(
-		l, 			// SIDE = left
-		u, 			// X is upper triungular matrix
-		n, 			// op( X ) = A
-		n, 			// X is not assumed to be unit triangular
+		CblasRowMajor,		// Row major
+		CblasLeft, 			// Side left
+		CblasUpper,			// X is upper triungular matrix
+		CblasNoTrans,		// op( X ) = A
+		CblasNonUnit,		// X is not assumed to be unit triangular
 		N,
 		N,
-		1.0,		// alpha = 1
-		A,			// X = A
+		1.0,				// alpha = 1.0
+		A,					// X = A
 		N,
-		M,			// Y = M = B
+		M,					// Y = M = B
 		N 
-		);
+	);
 
 
 
@@ -58,16 +61,17 @@ double* my_solver(int N, double *A, double *B) {
 	// Y := alpha*op( X )*Y
 	// P = At * A;
 	cblas_dtrmm(
-		l, 			// SIDE = left
-		u, 			// X is upper triungular matrix
-		t, 			// op( X ) = At
-		n, 			// X is not assumed to be unit triangular
+		CblasRowMajor,		// Row major
+		CblasLeft, 			// Side left
+		CblasUpper,			// X is upper triungular matrix
+		CblasTrans,			// op( X ) = At
+		CblasNonUnit,		// X is not assumed to be unit triangular
 		N,
 		N,
-		1.0,		// alpha = 1
-		A,			// X = A
+		1.0,				// alpha = 1.0
+		A,					// X = A
 		N,
-		P,			// Y = P = A
+		P,					// Y = P = A
 		N
 	);
 
@@ -75,19 +79,20 @@ double* my_solver(int N, double *A, double *B) {
 
 	// Z := alpha*op( X )*op( Y ) + beta*Z
 	// P = M x Bt  +  P
-	blas_dgemm(
-		n, 			// op( X ) = M
-		t, 			// op( Y ) = Bt
+	cblas_dgemm(
+		CblasRowMajor,		// Row major
+		CblasNoTrans,		// op( X ) = M
+		CblasTrans,			// op( Y ) = Bt
 		N,
 		N,
 		N,
-		1.0,		// alpha = 1
-		M,			// X = M
+		1.0,				// alpha = 1.0
+		M,					// X = M
 		N,
-		B,			// Y = B
+		B,					// Y = B
 		N,
-		1.0,		// beta = 1
-		P,			// Z = P
+		1.0,				// beta = 1.0
+		P,					// Z = P
 		N
 	);
 
