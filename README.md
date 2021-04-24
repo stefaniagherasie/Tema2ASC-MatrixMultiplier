@@ -38,6 +38,8 @@ Tema are urmatoarea organizare:
 
 ## Bibliografie
 1. http://www.netlib.org/blas/
+2. http://www.netlib.org/lapack/explore-html/d5/db0/cblas__dtrmm_8c_acbf40f4eac3fa3e2cdcafa5a1f1cf6da.html
+3. http://www.netlib.org/lapack/explore-html/dc/d18/cblas__dgemm_8c_ad07ba707cc7a6b23df8576123fac3e0d.html#ad07ba707cc7a6b23df8576123fac3e0d
 
 
 [BLAS Atlas]: http://www.netlib.org/blas/
