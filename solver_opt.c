@@ -170,8 +170,6 @@ double *multiply_lower_matrix(int N, double *A, double *B) {
  * Add your optimized implementation here
  */
 double* my_solver(int N, double *A, double* B) {
-	printf("OPT SOLVER\n");
-
 
 	/* 
 		C = A x B x Bt  +  At x A 			(M = B x Bt)

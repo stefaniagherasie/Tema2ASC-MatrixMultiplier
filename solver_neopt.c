@@ -126,8 +126,6 @@ double *multiply_lower_matrix(int N, double *A, double *B) {
  * Add your unoptimized implementation here
  */
 double* my_solver(int N, double *A, double* B) {
-	printf("NEOPT SOLVER\n");
-
 
 	/* 
 		C = A x B x Bt  +  At x A 			(M = B x Bt)

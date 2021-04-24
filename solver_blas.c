@@ -28,7 +28,6 @@ double* make_copy(int N, double *mat) {
  * Add your BLAS implementation here
  */
 double* my_solver(int N, double *A, double *B) {
-	printf("BLAS SOLVER\n");
 
 	/* 
 		C = A x B x Bt  +  At x A 			(M  = A x B)
