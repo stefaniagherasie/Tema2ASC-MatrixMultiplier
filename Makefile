@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-Wall -Werror -O0
 LIBDIRS=
-LIBS=libsatlas.so.3.10
+LIBS=
 
 all: compare tema2_blas tema2_neopt tema2_opt_m 
 

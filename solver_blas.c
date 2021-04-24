@@ -3,7 +3,7 @@
  * 2021 Spring
  */
 
-#include <cblas.h>
+//#include "cblas.h"
 #include "utils.h"
 
 double* make_copy(int N, double *mat) {
@@ -34,7 +34,7 @@ double* my_solver(int N, double *A, double *B) {
 		C = P
 	*/
 
-
+/*
 	double *M = make_copy(N, B);
 
 	// Y := alpha*op( X )*Y
@@ -99,4 +99,7 @@ double* my_solver(int N, double *A, double *B) {
 	free(M);
 
 	return P;
+
+*/
+	return NULL;
 }
