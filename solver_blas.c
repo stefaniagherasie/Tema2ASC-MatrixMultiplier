@@ -10,6 +10,9 @@ double* make_copy(int N, double *mat) {
 	int i, j;
 
 	double *copy_mat = (double *) calloc(N * N, sizeof(double));
+	if (copy_mat == NULL) {
+		return NULL;
+	}
 
 	for (i = 0; i < N; ++i) {
 		for (j = 0; j < N; ++j) {
@@ -36,6 +39,8 @@ double* my_solver(int N, double *A, double *B) {
 
 /*
 	double *M = make_copy(N, B);
+	if (M == NULL) 
+		return NULL;
 
 	// Y := alpha*op( X )*Y
 	// M = A * B
@@ -57,6 +62,8 @@ double* my_solver(int N, double *A, double *B) {
 
 
 	double *P = make_copy(N, A);
+	if (P == NULL) 
+		return NULL;
 
 	// Y := alpha*op( X )*Y
 	// P = At * A;
