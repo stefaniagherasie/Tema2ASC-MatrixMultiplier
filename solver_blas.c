@@ -3,7 +3,7 @@
  * 2021 Spring
  */
 
-#include "cblas.h"
+//#include "cblas.h"
 #include "utils.h"
 
 
@@ -75,7 +75,7 @@ double* my_solver(int N, double *A, double *B) {
 	*/
 
 
-	double *M = make_copy(N, B);
+/*	double *M = make_copy(N, B);
 	if (M == NULL) 
 		return NULL;
 
@@ -123,7 +123,7 @@ double* my_solver(int N, double *A, double *B) {
 
 	// Z := alpha*op( X )*op( Y ) + beta*Z
 	// P = M x Bt  +  P
-	/*
+	
 	cblas_dgemm(
 		CblasRowMajor,		// Row major
 		CblasNoTrans,		// op( X ) = M
@@ -139,13 +139,14 @@ double* my_solver(int N, double *A, double *B) {
 		1.0,				// beta = 1.0
 		P,					// Z = P
 		N
-	); */
+	); 
 
-	double *Z = multiply_matrix(N, M, bt);
+	double *Z = multiply_matrix(N, M, Bt);
 	double *X = add_matrix(N, Z, P);
 
 	free(M);
 
 	return X;
-
+*/
+	return NULL;
 }

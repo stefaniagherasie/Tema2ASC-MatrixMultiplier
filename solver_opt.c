@@ -33,8 +33,8 @@ double *transpose_matrix(int N, double *A) {
 	}
 
 	// check here
-	for (i = 0; i < N; ++i) {
-		for (j = 0; j < N; ++j) {
+	for (i = 0; i < N; i++) {
+		for (j = 0; j < N; j++) {
 			result[j * N + i] = A[i * N + j];
 		}
 	}
@@ -42,7 +42,8 @@ double *transpose_matrix(int N, double *A) {
 	return result;
 }
 
-/*
+
+
 double *transpose_upper_matrix(int N, double *A) {
 	int i, j;
 
@@ -60,7 +61,6 @@ double *transpose_upper_matrix(int N, double *A) {
 
 	return result;
 }
-*/
 
 
 double *multiply_matrix(int N, double *A, double *B) {
@@ -147,11 +147,11 @@ double *multiply_lower_matrix(int N, double *A, double *B) {
 		register double *orig_pa = &A[i * N];
 
 		for (j = 0; j < N; ++j) {
-			register double *pa = orig_pa + j;
-			register double *pb = &B[j * N + j];
+			register double *pa = orig_pa;
+			register double *pb = &B[j];
 			register double sum = 0.0;
 
-			for (k = j; k < N; ++k) {
+			for (k = 0; k < i + 1; ++k) {
 				sum += *pa * *pb;
 				pa++;
 				pb += N;
@@ -178,6 +178,23 @@ double* my_solver(int N, double *A, double* B) {
 		C = P 			+  L
 		C = result
 	*/
+
+	int i, j;
+	printf("Matrix A:\n");
+	for (i = 0; i < N; i++ ) {
+		for (j = 0; j< N; j++) {
+			printf("%.6f ", A[i * N + j]); 
+		}
+		printf("\n");
+	}
+
+	printf("\nMatrix B:\n");
+	for (i = 0; i < N; i++ ) {
+		for (j = 0; j< N; j++) {
+			printf("%.6f ", B[i * N + j]); 
+		}
+		printf("\n");
+	}
 	
 	// B_trans = Bt
 	double *B_trans = transpose_matrix(N, B);
@@ -199,7 +216,7 @@ double* my_solver(int N, double *A, double* B) {
 	}
 
 	// A_trans = At
-	double *A_trans = transpose_matrix(N, A);
+	double *A_trans = transpose_upper_matrix(N, A);
 	if (A_trans == NULL) {
 		return NULL;
 	}
@@ -214,6 +231,14 @@ double* my_solver(int N, double *A, double* B) {
 	double *result = add_matrix(N, P, L);
 	if (result == NULL) {
 		return NULL;
+	}
+
+	printf("\nMatrix:\n");
+	for (i = 0; i < N; i++ ) {
+		for (j = 0; j< N; j++) {
+			printf("%.6f ", result[i * N + j]); 
+		}
+		printf("\n");
 	}
 
 	free(B_trans);

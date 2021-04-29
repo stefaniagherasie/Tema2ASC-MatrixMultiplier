@@ -32,8 +32,8 @@ double *transpose_matrix(int N, double *A) {
 	}
 
 	// check here
-	for (i = 0; i < N; ++i) {
-		for (j = 0; j < N; ++j) {
+	for (i = 0; i < N; i++) {
+		for (j = 0; j < N; j++) {
 			result[j * N + i] = A[i * N + j];
 		}
 	}
@@ -82,6 +82,7 @@ double *multiply_matrix(int N, double *A, double *B) {
 }
 
 
+// A is upper triunghiular matrix
 double *multiply_upper_matrix(int N, double *A, double *B) {
     int i, j, k;
 
@@ -112,7 +113,7 @@ double *multiply_lower_matrix(int N, double *A, double *B) {
 
 	for (i = 0; i < N; ++i) {
 		for (j = 0; j < N; ++j) {
-			for (k = j; k < N; ++k) {
+			for (k = 0; k < i + 1; ++k) {
 				result[i * N + j] += A[i * N + k] * B[k * N + j];
 			}
 		}
@@ -134,6 +135,22 @@ double* my_solver(int N, double *A, double* B) {
 		C = P 			+  L
 		C = result
 	*/
+	int i, j;
+	printf("Matrix A:\n");
+	for (i = 0; i < N; i++ ) {
+		for (j = 0; j< N; j++) {
+			printf("%.6f ", A[i * N + j]); 
+		}
+		printf("\n");
+	}
+
+	printf("\nMatrix B:\n");
+	for (i = 0; i < N; i++ ) {
+		for (j = 0; j< N; j++) {
+			printf("%.6f ", B[i * N + j]); 
+		}
+		printf("\n");
+	}
 
 
 	// B_trans = Bt
@@ -172,11 +189,20 @@ double* my_solver(int N, double *A, double* B) {
 		return NULL;
 	}
 
+	printf("\nMatrix:\n");
+	for (i = 0; i < N; i++ ) {
+		for (j = 0; j< N; j++) {
+			printf("%.6f ", result[i * N + j]); 
+		}
+		printf("\n");
+	}
+
 	free(B_trans);
 	free(M);
 	free(P);
 	free(A_trans);
 	free(L);
+
 
 	return result;
 }
