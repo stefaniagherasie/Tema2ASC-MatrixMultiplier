@@ -3,26 +3,8 @@
  * 2021 Spring
  */
 
-//#include "cblas.h"
+#include "cblas.h"
 #include "utils.h"
-
-
-double *add_matrix(int N, double *A, double *B) {
-	int i, j;
-
-	double *result = (double *) calloc(N * N, sizeof(double));
-	if (result == NULL) {
-		return NULL;
-	}
-
-	for (i = 0; i < N; ++i) {
-		for (j = 0; j < N; ++j) {
-			result[i * N + j] += A[i * N + j] + B[i * N + j];
-		}
-	}
-
-	return result;
-}
 
 double *multiply_matrix(int N, double *A, double *B) {
     int i, j, k;
@@ -74,8 +56,8 @@ double* my_solver(int N, double *A, double *B) {
 		C = P
 	*/
 
-
-/*	double *M = make_copy(N, B);
+	
+	double *M = make_copy(N, B);
 	if (M == NULL) 
 		return NULL;
 
@@ -141,12 +123,8 @@ double* my_solver(int N, double *A, double *B) {
 		N
 	); 
 
-	double *Z = multiply_matrix(N, M, Bt);
-	double *X = add_matrix(N, Z, P);
 
 	free(M);
 
-	return X;
-*/
-	return NULL;
+	return P;
 }

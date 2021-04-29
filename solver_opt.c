@@ -179,22 +179,6 @@ double* my_solver(int N, double *A, double* B) {
 		C = result
 	*/
 
-	int i, j;
-	printf("Matrix A:\n");
-	for (i = 0; i < N; i++ ) {
-		for (j = 0; j< N; j++) {
-			printf("%.6f ", A[i * N + j]); 
-		}
-		printf("\n");
-	}
-
-	printf("\nMatrix B:\n");
-	for (i = 0; i < N; i++ ) {
-		for (j = 0; j< N; j++) {
-			printf("%.6f ", B[i * N + j]); 
-		}
-		printf("\n");
-	}
 	
 	// B_trans = Bt
 	double *B_trans = transpose_matrix(N, B);
@@ -233,13 +217,6 @@ double* my_solver(int N, double *A, double* B) {
 		return NULL;
 	}
 
-	printf("\nMatrix:\n");
-	for (i = 0; i < N; i++ ) {
-		for (j = 0; j< N; j++) {
-			printf("%.6f ", result[i * N + j]); 
-		}
-		printf("\n");
-	}
 
 	free(B_trans);
 	free(M);
