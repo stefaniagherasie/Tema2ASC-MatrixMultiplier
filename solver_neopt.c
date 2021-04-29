@@ -5,6 +5,8 @@
 
 #include "utils.h"
 
+
+/* Matrix addition */
 double *add_matrix(int N, double *A, double *B) {
 	int i, j;
 
@@ -23,6 +25,7 @@ double *add_matrix(int N, double *A, double *B) {
 }
 
 
+/* Find transpose of a regular matrix */
 double *transpose_matrix(int N, double *A) {
 	int i, j;
 
@@ -31,7 +34,6 @@ double *transpose_matrix(int N, double *A) {
 		return NULL;
 	}
 
-	// check here
 	for (i = 0; i < N; i++) {
 		for (j = 0; j < N; j++) {
 			result[j * N + i] = A[i * N + j];
@@ -41,7 +43,8 @@ double *transpose_matrix(int N, double *A) {
 	return result;
 }
 
-/*
+
+/* Find transpose of an upper triangular matrix */
 double *transpose_upper_matrix(int N, double *A) {
 	int i, j;
 
@@ -50,7 +53,6 @@ double *transpose_upper_matrix(int N, double *A) {
 		return NULL;
 	}
 
-	// check here
 	for (i = 0; i < N; ++i) {
 		for (j = i; j < N; ++j) {
 			result[j * N + i] = A[i * N + j];
@@ -59,9 +61,9 @@ double *transpose_upper_matrix(int N, double *A) {
 
 	return result;
 }
-*/
 
 
+/* Multiply two regular matrices */
 double *multiply_matrix(int N, double *A, double *B) {
     int i, j, k;
 
@@ -82,7 +84,7 @@ double *multiply_matrix(int N, double *A, double *B) {
 }
 
 
-// A is upper triunghiular matrix
+/* Multiply two matrices, the first one being an upper triangular matrix */
 double *multiply_upper_matrix(int N, double *A, double *B) {
     int i, j, k;
 
@@ -103,6 +105,7 @@ double *multiply_upper_matrix(int N, double *A, double *B) {
 }
 
 
+/* Multiply two matrices, the first one being a lower triangular matrix */
 double *multiply_lower_matrix(int N, double *A, double *B) {
     int i, j, k;
 
@@ -142,6 +145,8 @@ double* my_solver(int N, double *A, double* B) {
 	if (B_trans == NULL) {
 		return NULL;
 	}
+
+
 	// M = B x Bt
 	double *M = multiply_matrix(N, B, B_trans);
 	if (M == NULL) {
@@ -155,11 +160,13 @@ double* my_solver(int N, double *A, double* B) {
 		return NULL;
 	}
 
+
 	// A_trans = At
 	double *A_trans = transpose_matrix(N, A);
 	if (A_trans == NULL) {
 		return NULL;
 	}
+
 
 	// L = At x A
 	double *L = multiply_lower_matrix(N, A_trans, A);
@@ -167,18 +174,19 @@ double* my_solver(int N, double *A, double* B) {
 		return NULL;
 	}
 
+
 	// result = P + L
 	double *result = add_matrix(N, P, L);
 	if (result == NULL) {
 		return NULL;
 	}
 
+
 	free(B_trans);
 	free(M);
 	free(P);
 	free(A_trans);
 	free(L);
-
 
 	return result;
 }

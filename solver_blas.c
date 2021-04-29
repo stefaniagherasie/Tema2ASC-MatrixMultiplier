@@ -6,26 +6,8 @@
 #include "cblas.h"
 #include "utils.h"
 
-double *multiply_matrix(int N, double *A, double *B) {
-    int i, j, k;
 
-    double *result = (double *) calloc(N * N, sizeof(double));
-	if (result == NULL) {
-		return NULL;
-	}
-
-	for (i = 0; i < N; ++i) {
-		for (j = 0; j < N; ++j) {
-			for (k = 0; k < N; ++k) {
-				result[i * N + j] += A[i * N + k] * B[k * N + j];
-			}
-		}
-	}
-
-	return result;
-}
-
-
+/* Make copy from a matrix */
 double* make_copy(int N, double *mat) {
 	int i, j;
 
@@ -61,13 +43,15 @@ double* my_solver(int N, double *A, double *B) {
 	if (M == NULL) 
 		return NULL;
 
-	// Y := alpha*op( X )*Y
+
+	
 	// M = A * B
+	// DTRMM performs this matrix operation: Y := alpha * op(X) * Y
 	cblas_dtrmm(
 		CblasRowMajor,		// Row major
 		CblasLeft, 			// Side left
 		CblasUpper,			// X is upper triungular matrix
-		CblasNoTrans,		// op( X ) = A
+		CblasNoTrans,		// op(X) = A
 		CblasNonUnit,		// X is not assumed to be unit triangular
 		N,
 		N,
@@ -84,13 +68,13 @@ double* my_solver(int N, double *A, double *B) {
 	if (P == NULL) 
 		return NULL;
 
-	// Y := alpha*op( X )*Y
 	// P = At * A;
+	// DTRMM performs this matrix operation:Y := alpha * op(X) * Y
 	cblas_dtrmm(
 		CblasRowMajor,		// Row major
 		CblasLeft, 			// Side left
 		CblasUpper,			// X is upper triungular matrix
-		CblasTrans,			// op( X ) = At
+		CblasTrans,			// op(X) = At
 		CblasNonUnit,		// X is not assumed to be unit triangular
 		N,
 		N,
@@ -103,13 +87,12 @@ double* my_solver(int N, double *A, double *B) {
 
 
 
-	// Z := alpha*op( X )*op( Y ) + beta*Z
 	// P = M x Bt  +  P
-	
+	// DGEMM performs this matrix operation: Z := alpha * op(X) * op(Y) + beta * Z
 	cblas_dgemm(
 		CblasRowMajor,		// Row major
-		CblasNoTrans,		// op( X ) = M
-		CblasTrans,			// op( Y ) = Bti
+		CblasNoTrans,		// op(X) = M
+		CblasTrans,			// op(Y) = Bt
 		N,
 		N,
 		N,
