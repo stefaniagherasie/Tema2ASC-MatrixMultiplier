@@ -76,7 +76,8 @@ deferentiere.
 - Am folosit `register` pentru a utiliza optim acea resursa.
 - Pentru functia `multiply_matrix` se foloseste si optimizarea prin folosirea unei bucle `k-i-j`, care acceseaza memoria intr-un mod mai eficient si aduce performante mai bune.  
 
-
+Timpii aproximativi obtinuti sunt:
+....
 
 
 
