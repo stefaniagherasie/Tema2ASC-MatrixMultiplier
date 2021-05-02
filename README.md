@@ -67,9 +67,9 @@ Timpii aproximativi obtinuti sunt:
 
 #### 3. Metoda OPTIMIZATA
 
-Varianta optimizata aduce imbunatatiri codului de la varianta neoptimizata penttru obtinerea unor timpi 
-radical mai buni, avand insa aceeasi complexitate. Imbunatatirile se fac in principal prin optimizarea 
-constantelor si al accesului la vectori si prin optimizarea buclelor. 
+Se aduc imbunatatiri codului de la varianta neoptimizata pentru obtinerea unor timpi radical mai buni, avand
+insa aceeasi complexitate. Imbunatatirile se fac in principal prin optimizarea constantelor si al accesului 
+la vectori si prin optimizarea buclelor. 
 - Rezultatul din `result[i][j]` se calculeaza in constanta `sum` pentru a reduce numarul de accesari la memorie.
 - Accesul la matrice se face folosind pointeri pentru a realiza mai rapid operatia de inmultire, renuntandu-se la 
 deferentiere. 
