@@ -1,0 +1,13 @@
+BLAS SOLVER
+Run=./tema2_blas: N=400: Time=0.058715
+Run=./tema2_blas: N=800: Time=0.272988
+Run=./tema2_blas: N=1200: Time=0.848344
+NEOPT SOLVER
+Run=./tema2_neopt: N=400: Time=1.157325
+Run=./tema2_neopt: N=800: Time=9.290556
+Run=./tema2_neopt: N=1200: Time=32.165798
+OPT SOLVER
+Run=./tema2_opt_m: N=400: Time=0.352998
+Run=./tema2_opt_m: N=800: Time=2.780238
+Run=./tema2_opt_m: N=1200: Time=9.409059
+<<< Bonus=0p >>>

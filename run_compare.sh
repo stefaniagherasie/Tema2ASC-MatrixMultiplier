@@ -1,18 +1,18 @@
-printf "\ndiff BLAS - NEOPT\n"
-./compare outputs/out1_blas outputs/out1_neopt 0.01
-./compare outputs/out2_blas outputs/out2_neopt 0.01
-./compare outputs/out3_blas outputs/out3_neopt 0.01
+printf "\ndiff BLAS\n"
+./compare outputs/out1_blas /export/asc/tema2/out1 0.0001
+./compare outputs/out2_blas /export/asc/tema2/out2 0.0001
+./compare outputs/out3_blas /export/asc/tema2/out3 0.0001
 
 
-printf "\ndiff BLAS - OPT\n"
-./compare outputs/out1_blas outputs/out1_opt 0.01
-./compare outputs/out2_blas outputs/out2_opt 0.01
-./compare outputs/out3_blas outputs/out3_opt 0.01
+printf "\ndiff OPT\n"
+./compare /export/asc/tema2/out1 outputs/out1_opt 0.0001
+./compare /export/asc/tema2/out2 outputs/out2_opt 0.0001
+./compare /export/asc/tema2/out3 outputs/out3_opt 0.0001
 
 
-printf "\ndiff NEOPT - OPT\n"
-./compare outputs/out1_neopt outputs/out1_opt 0.01
-./compare outputs/out2_neopt outputs/out2_opt 0.01
-./compare outputs/out3_neopt outputs/out3_opt 0.01
+printf "\ndiff NEOPT\n"
+./compare outputs/out1_neopt /export/asc/tema2/out1 0.0001
+./compare outputs/out2_neopt /export/asc/tema2/out2 0.0001
+./compare outputs/out3_neopt /export/asc/tema2/out3 0.0001
 
 

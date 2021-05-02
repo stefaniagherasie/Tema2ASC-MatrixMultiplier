@@ -1,0 +1,15 @@
+
+diff BLAS
+./compare outputs/out1_blas /export/asc/tema2/out1 OK
+./compare outputs/out2_blas /export/asc/tema2/out2 OK
+./compare outputs/out3_blas /export/asc/tema2/out3 OK
+
+diff OPT
+./compare /export/asc/tema2/out1 outputs/out1_opt OK
+./compare /export/asc/tema2/out2 outputs/out2_opt OK
+./compare /export/asc/tema2/out3 outputs/out3_opt OK
+
+diff NEOPT
+./compare outputs/out1_neopt /export/asc/tema2/out1 OK
+./compare outputs/out2_neopt /export/asc/tema2/out2 OK
+./compare outputs/out3_neopt /export/asc/tema2/out3 OK
