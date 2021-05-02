@@ -49,7 +49,9 @@ Am implementat functia `make_copy` care intoarce o copie a unei matrice, folosit
 ale functiilor BLAS.
 
 Timpii aproximativi obtinuti sunt:
-....
+Run=./tema2_blas: N=400: Time=0.058715
+Run=./tema2_blas: N=800: Time=0.272988
+Run=./tema2_blas: N=1200: Time=0.848344
 
 #### 2. Metoda NEOPTIMIZATA
 
@@ -63,7 +65,9 @@ matricea triunghilara.
 cand matricea din stanga e superior/inferior triunghiulara
 
 Timpii aproximativi obtinuti sunt:
-....
+Run=./tema2_neopt: N=400: Time=1.157325
+Run=./tema2_neopt: N=800: Time=9.290556
+Run=./tema2_neopt: N=1200: Time=32.165798
 
 #### 3. Metoda OPTIMIZATA
 
@@ -77,15 +81,16 @@ deferentiere.
 - Pentru functia `multiply_matrix` se foloseste si optimizarea prin folosirea unei bucle `k-i-j`, care acceseaza memoria intr-un mod mai eficient si aduce performante mai bune.  
 
 Timpii aproximativi obtinuti sunt:
-....
-
-
+Run=./tema2_opt_m: N=400: Time=0.352998
+Run=./tema2_opt_m: N=800: Time=2.780238
+Run=./tema2_opt_m: N=1200: Time=9.409059
 
 
 ## Bibliografie
 1. http://www.netlib.org/blas/
-2. http://www.netlib.org/lapack/explore-html/d5/db0/cblas__dtrmm_8c_acbf40f4eac3fa3e2cdcafa5a1f1cf6da.html
-3. http://www.netlib.org/lapack/explore-html/dc/d18/cblas__dgemm_8c_ad07ba707cc7a6b23df8576123fac3e0d.html#ad07ba707cc7a6b23df8576123fac3e0d
+2. https://ocw.cs.pub.ro/courses/asc/laboratoare/05
+3. http://www.netlib.org/lapack/explore-html/d5/db0/cblas__dtrmm_8c_acbf40f4eac3fa3e2cdcafa5a1f1cf6da.html
+4. http://www.netlib.org/lapack/explore-html/dc/d18/cblas__dgemm_8c_ad07ba707cc7a6b23df8576123fac3e0d.html#ad07ba707cc7a6b23df8576123fac3e0d
 
 
 [BLAS Atlas]: http://www.netlib.org/blas/
