@@ -31,12 +31,13 @@ Rularea si testarea se realizeaza pe **cluster** (username@fep.grid.pub.ro), pe 
     ./tema2_<mod> <input_file> 
 ```
 
-> **Fișierul de input** este structurat astfel:
-> - pe prima linie numărul de teste.
-> - pe următoarele linii descrierea fiecarui test:
->    - valoarea lui N.
->    - seed-ul folosit la generarea datelor.
->    - calea către fișierul de ieșire ce conține matricea rezultat.
+**Fișierul de input** este structurat astfel:
+- pe prima linie numărul de teste.
+- pe următoarele linii descrierea fiecarui test:
+   - valoarea lui N.
+   - seed-ul folosit la generarea datelor.
+   - calea către fișierul de ieșire ce conține matricea rezultat.
+
 
 Testarea se face folosind utilitarul `compare`
 ```shell
