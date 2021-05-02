@@ -115,6 +115,7 @@ sa creasca in acelasi mod pe masura ce creste N, indiferent de metoda folosita.
 2. https://ocw.cs.pub.ro/courses/asc/laboratoare/05
 3. http://www.netlib.org/lapack/explore-html/d5/db0/cblas__dtrmm_8c_acbf40f4eac3fa3e2cdcafa5a1f1cf6da.html
 4. http://www.netlib.org/lapack/explore-html/dc/d18/cblas__dgemm_8c_ad07ba707cc7a6b23df8576123fac3e0d.html#ad07ba707cc7a6b23df8576123fac3e0d
+5. https://ocw.cs.pub.ro/courses/asc/laboratoare/04
 
 
 [BLAS Atlas]: http://www.netlib.org/blas/
