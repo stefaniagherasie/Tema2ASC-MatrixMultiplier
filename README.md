@@ -25,11 +25,18 @@ Tema are urmatoarea organizare:
 - `graphs`, `results` - foldere cu rezultatele obtinute
 
 ## Rulare si Testare
-Rularea si testarea se realizeaza pe **cluster** (username@fep.grid.pub.ro), pe coada `ibm-nehalem.q`. <br>
+Rularea si testarea se realizeaza pe **cluster** (username@fep.grid.pub.ro), pe coada `ibm-nehalem.q`.
+
 În urma rulării comenzii `make` vor rezulta 3 fișiere binare: `tema2_blas`, `tema2_neopt` si `tema2_opt_m`.
 ```shell
     ./tema2_<mod> <input_file> 
 ```
+
+Testarea se face folosind utilitarul `compare`
+```shell
+    ./compare  out1  /export/asc/tema2/out1  <tolerance>
+```
+<br>
 
 **Fișierul de input** este structurat astfel:
 - pe prima linie numărul de teste.
@@ -39,10 +46,6 @@ Rularea si testarea se realizeaza pe **cluster** (username@fep.grid.pub.ro), pe 
    - calea către fișierul de ieșire ce conține matricea rezultat.
 
 
-Testarea se face folosind utilitarul `compare`
-```shell
-    ./compare  out1  /export/asc/tema2/out1  <tolerance>
-```
 
 ## Implementare
 
