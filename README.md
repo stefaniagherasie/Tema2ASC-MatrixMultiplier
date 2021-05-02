@@ -55,7 +55,7 @@ Timpii aproximativi obtinuti sunt:
 
 Se folosesc inmultirile normale de matrice, fara vreo imbunatatire care sa optimizeze timpul. Operatia se
 realizeaza tinand cont ca matricea A este superior triunghiulara, avand functii separate pentru inmultirea cu
-matrice triunghilara.
+matricea triunghilara.
 - `add_matrix` - aduna 2 matrici
 - `transpose_matrix` si `transpose_upper_matrix` - obtine transpusa unei matrici normale/superior triunghilare
 - `multiply_matrix` - inmulteste 2 matrici oarecare
