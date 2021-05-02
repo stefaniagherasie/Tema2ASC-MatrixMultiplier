@@ -47,14 +47,15 @@ Testarea se face folosind utilitarul `compare`
 
 #### ► Metoda BLAS
 
-Am folosit functiile BLAS Atlas pentru a realiza eficient inmultirea matricilor. Deoarece A 
-este o matrice superior triunghiulara, am folosit pentru inmultirea `M = A x B` functia [cblas_dtrmm].
+Am folosit functiile BLAS Atlas pentru a realiza eficient inmultirea matricilor. Am implementat functia `make_copy` care intoarce o copie a unei matrice, folosita pentru rezultate intermediare ale functiilor BLAS.
+
+Deoarece A este o matrice superior triunghiulara, am folosit pentru inmultirea `M = A x B` functia [cblas_dtrmm].
 Pentru inmultirea `P = At x A` am folosit aceeasi functie, schimband un parametru care calculeaza transpusa matricei A, care este inferior triunghiulara.
 
 Pentru operatia `M x Bt + P` se foloseste functia [cblas_dgemm] care realizeaza inmultirea dintre 2 matrici
 oarecare si adunarea cu o a treia matrice in acelasi timp, astfel obtinand rezultatul operatiei cerute. 
 
-Am implementat functia `make_copy` care intoarce o copie a unei matrice, folosita pentru rezultate intermediare ale functiilor BLAS.
+
 
 Timpii aproximativi de rulare sunt:
 >    Run=./tema2_blas: N=400: Time=0.058715 <br>
