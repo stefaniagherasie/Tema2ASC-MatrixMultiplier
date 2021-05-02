@@ -25,18 +25,18 @@ Tema are urmatoarea organizare:
 - `graphs`, `results` - foldere cu rezultatele obtinute
 
 ## Rulare si Testare
-Rularea si testarea se realizeaza pe **cluster** (username@fep.grid.pub.ro), pe coada `ibm-nehalem.q`.
+Rularea si testarea se realizeaza pe **cluster** (username@fep.grid.pub.ro), pe coada `ibm-nehalem.q`. <br>
 În urma rulării comenzii `make` vor rezulta 3 fișiere binare: `tema2_blas`, `tema2_neopt` si `tema2_opt_m`.
 ```shell
     ./tema2_<mod> <input_file> 
 ```
 
-**Fișierul de input** este structurat astfel:
-- pe prima linie numărul de teste.
-- pe următoarele linii descrierea fiecarui test:
-    - valoarea lui N.
-    - seed-ul folosit la generarea datelor.
-    - calea către fișierul de ieșire ce conține matricea rezultat.
+> **Fișierul de input** este structurat astfel:
+> - pe prima linie numărul de teste.
+> - pe următoarele linii descrierea fiecarui test:
+>    - valoarea lui N.
+>    - seed-ul folosit la generarea datelor.
+>    - calea către fișierul de ieșire ce conține matricea rezultat.
 
 Testarea se face folosind utilitarul `compare`
 ```shell
@@ -56,12 +56,11 @@ oarecare si adunarea cu o a treia matrice in acelasi timp, astfel obtinand rezul
 Am implementat functia `make_copy` care intoarce o copie a unei matrice, folosita pentru rezultate intermediare
 ale functiilor BLAS.
 
-```shell
-Timpii aproximativi obtinuti sunt:
-    Run=./tema2_blas: N=400: Time=0.058715
-    Run=./tema2_blas: N=800: Time=0.272988
-    Run=./tema2_blas: N=1200: Time=0.848344
-```
+Timpii aproximativi de rulare sunt:
+>    Run=./tema2_blas: N=400: Time=0.058715 <br>
+>    Run=./tema2_blas: N=800: Time=0.272988 <br>
+>    Run=./tema2_blas: N=1200: Time=0.848344 <br>
+
 
 #### ► Metoda NEOPTIMIZATA
 
@@ -74,12 +73,10 @@ matricea triunghilara.
 - `multiply_upper_matrix` si `multiply_lower_matrix` - restange conditiile din bucle pentru a diminua calculele 
 cand matricea din stanga e superior/inferior triunghiulara
 
-```shell
-Timpii aproximativi obtinuti sunt:
-    Run=./tema2_neopt: N=400: Time=1.157325
-    Run=./tema2_neopt: N=800: Time=9.290556
-    Run=./tema2_neopt: N=1200: Time=32.165798
-```
+Timpii aproximativi de rulare sunt:
+>    Run=./tema2_neopt: N=400: Time=1.157325 <br>
+>    Run=./tema2_neopt: N=800: Time=9.290556 <br>
+>    Run=./tema2_neopt: N=1200: Time=32.165798
 
 #### ► Metoda OPTIMIZATA
 
@@ -91,16 +88,17 @@ la vectori si prin optimizarea buclelor.
 deferentiere. 
 - Am folosit `register` pentru a utiliza optim acea resursa.
 - Pentru functia `multiply_matrix` se foloseste si optimizarea prin folosirea unei bucle `k-i-j`, care acceseaza memoria intr-un mod mai eficient si aduce performante mai bune.  
-```shell
-Timpii aproximativi obtinuti sunt:
-    Run=./tema2_opt_m: N=400: Time=0.352998
-    Run=./tema2_opt_m: N=800: Time=2.780238
-    Run=./tema2_opt_m: N=1200: Time=9.409059
-```
+Timpii aproximativi de rulare sunt:
+>    Run=./tema2_opt_m: N=400: Time=0.352998 <br>
+>    Run=./tema2_opt_m: N=800: Time=2.780238 <br>
+>    Run=./tema2_opt_m: N=1200: Time=9.409059 <br>
+
 
 ## Compararea Rezultatelor
 Graficele se afla in folderul `graphs` si contin interpretarea valorilor lui N din intervalul
-[400, 800, 1000, 1200, 1400, 1600]. Am ales sa reprezint grafic diferenta dintre timpii de rulare obtinuti ( `grafic_comparare` ).
+[400, 800, 1000, 1200, 1400, 1600].  Am ales sa reprezint grafic diferenta dintre timpii de rulare obtinuti (`grafic_comparare`).
+Am realizat si grafice individuale cu timpii pentru fiecare metoda, pentru a observa ca timpii tind
+sa creasca in acelasi mod pe masura ce creste N, indiferent de metoda folosita.
 
 - Se observa ca metoda cu BLAS este cea mai avantajoasa, folosind functii specializate in lucrul cu operatii pe matrici. De exemplu, pentru N=1200, se obtine
 blas=0.85s si opt_m=9.4s, deci un timp de 11 ori mai bun in cazul BLAS. Graficul metodei BLAS
@@ -110,16 +108,13 @@ este aproape o dreapta conparativ cu celelalte.
 De exemplu, pentru N=1200, se obtine neopt=32s si opt_m=9.4s. Prin urmare, folosirea pointerilor,
 accesul direct la memorie si ordonarea buclelor permit o optimizare radicala a rezultatelor.
 
-Am realizat si grafice individuale cu timpii pentru fiecare metoda, pentru a observa ca timpii tind
-sa creasca in acelasi mod pe masura ce creste N, indiferent de metoda folosita.
-
 
 ## Bibliografie
 1. http://www.netlib.org/blas/
 2. https://ocw.cs.pub.ro/courses/asc/laboratoare/05
 3. http://www.netlib.org/lapack/explore-html/d5/db0/cblas__dtrmm_8c_acbf40f4eac3fa3e2cdcafa5a1f1cf6da.html
 4. http://www.netlib.org/lapack/explore-html/dc/d18/cblas__dgemm_8c_ad07ba707cc7a6b23df8576123fac3e0d.html#ad07ba707cc7a6b23df8576123fac3e0d
-5. https://ocw.cs.pub.ro/courses/asc/laboratoare/04
+6. https://ocw.cs.pub.ro/courses/asc/laboratoare/04
 
 
 [BLAS Atlas]: http://www.netlib.org/blas/
