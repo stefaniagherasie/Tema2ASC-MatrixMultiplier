@@ -36,7 +36,8 @@ Tema are urmatoarea organizare:
     - calea către fișierul de ieșire ce conține matricea rezultat.
 
 ## Implementare
-1. Metoda BLAS
+
+#### 1. Metoda BLAS
 
 Am folosit functiile BLAS Atlas pentru a realiza eficient inmultirea matricilor. Deoarece A 
 este o matrice superior triunghiulara, am folosit pentru inmultirea `M = A x B` functia [cblas_dtrmm].
@@ -50,7 +51,7 @@ ale functiilor BLAS.
 Timpii aproximativi obtinuti sunt:
 ....
 
-2. Metoda Neoptimizata
+#### 2. Metoda NEOPTIMIZATA
 
 Se folosesc inmultirile normale de matrice, fara vreo imbunatatire care sa optimizeze timpul. Operatia se
 realizeaza tinand cont ca matricea A este superior triunghiulara, avand functii separate pentru inmultirea cu
@@ -64,7 +65,7 @@ cand matricea din stanga e superior/inferior triunghiulara
 Timpii aproximativi obtinuti sunt:
 ....
 
-3. Metoda Optimizata
+#### 3. Metoda OPTIMIZATA
 
 Varianta optimizata aduce imbunatatiri codului de la varianta neoptimizata penttru obtinerea unor timpi 
 radical mai buni, avand insa aceeasi complexitate. Imbunatatirile se fac in principal prin optimizarea 
