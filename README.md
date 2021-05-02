@@ -99,7 +99,7 @@ Graficele se afla in folderul `graphs` si contin interpretarea valorilor lui N d
 [400, 800, 1000, 1200, 1400, 1600]. Am ales sa reprezint grafic diferenta dintre timpii de rulare obtinuti. 
 
 Din graficul `grafic_comparare`  se observa ca metoda cu BLAS este cea mai avantajoasa, folosind functii specializate in lucrul cu operatii pe matrici. De exemplu, pentru N=1200, se obtine
-blas=0.85s si opt_m=9.4s, deci un timp de 10 ori mai bun in cazul BLAS. Graficul metodei BLAS
+blas=0.85s si opt_m=9.4s, deci un timp de 11 ori mai bun in cazul BLAS. Graficul metodei BLAS
 este aproape o dreapta conparativ cu celelalte.
 
 Fata de varianta neoptimizata, metoda optimizata este de aproximativ 70% mai buna pentru timpii mari.
