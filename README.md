@@ -1,8 +1,7 @@
 # Tema2ASC-MatrixMultiplier
 [Tema2 - Arhitectura Sistemelor de Calcul] <br>
-Tema presupune realizarea unei operatii de inmultire de matrici in 3 moduri. <br>
-> Enuntul se gaseste [aici](https://ocw.cs.pub.ro/courses/asc/teme/tema2).
-> 
+Tema presupune realizarea unei operatii de inmultire de matrici in 3 moduri.
+> Enuntul se gaseste [aici](https://ocw.cs.pub.ro/courses/asc/teme/tema2). <br>
 > Scheletul de cod se gaseste [aici](https://ocw.cs.pub.ro/courses/_media/asc/tema2/skel.zip).
 
 ## Descriere 
@@ -23,10 +22,10 @@ Tema are urmatoarea organizare:
 - `solver_neopt.c` - implementarea variantei neopt.
 - `solver_opt.c` - implementarea variantei opt_m.
 - `compare.c` - utilitar ce poate fi folosit pentru a compara doua fisiere rezultat
-- `graphs` - folder cu graficele de comparare
+- `graphs`, `results` - foldere cu rezultatele obtinute
 
 ## Rulare si Testare
-Rularea si Testarea si realizeaza pe **cluster**(username @fep.grid.pub.ro), pe coada `ibm-nehalem.q`
+Rularea si testarea se realizeaza pe **cluster** (username@fep.grid.pub.ro), pe coada `ibm-nehalem.q`.
 În urma rulării comenzii `make` vor rezulta 3 fișiere binare: `tema2_blas`, `tema2_neopt` si `tema2_opt_m`.
 ```shell
     ./tema2_<mod> <input_file> 
@@ -39,10 +38,14 @@ Rularea si Testarea si realizeaza pe **cluster**(username @fep.grid.pub.ro), pe 
     - seed-ul folosit la generarea datelor.
     - calea către fișierul de ieșire ce conține matricea rezultat.
 
+Testarea se face folosind utilitarul `compare`
+```shell
+    ./compare  out1  /export/asc/tema2/out1  <tolerance>
+```
 
 ## Implementare
 
-#### 1. Metoda BLAS
+#### ► Metoda BLAS
 
 Am folosit functiile BLAS Atlas pentru a realiza eficient inmultirea matricilor. Deoarece A 
 este o matrice superior triunghiulara, am folosit pentru inmultirea `M = A x B` functia [cblas_dtrmm].
@@ -53,12 +56,14 @@ oarecare si adunarea cu o a treia matrice in acelasi timp, astfel obtinand rezul
 Am implementat functia `make_copy` care intoarce o copie a unei matrice, folosita pentru rezultate intermediare
 ale functiilor BLAS.
 
+```shell
 Timpii aproximativi obtinuti sunt:
-Run=./tema2_blas: N=400: Time=0.058715
-Run=./tema2_blas: N=800: Time=0.272988
-Run=./tema2_blas: N=1200: Time=0.848344
+    Run=./tema2_blas: N=400: Time=0.058715
+    Run=./tema2_blas: N=800: Time=0.272988
+    Run=./tema2_blas: N=1200: Time=0.848344
+```
 
-#### 2. Metoda NEOPTIMIZATA
+#### ► Metoda NEOPTIMIZATA
 
 Se folosesc inmultirile normale de matrice, fara vreo imbunatatire care sa optimizeze timpul. Operatia se
 realizeaza tinand cont ca matricea A este superior triunghiulara, avand functii separate pentru inmultirea cu
@@ -69,12 +74,14 @@ matricea triunghilara.
 - `multiply_upper_matrix` si `multiply_lower_matrix` - restange conditiile din bucle pentru a diminua calculele 
 cand matricea din stanga e superior/inferior triunghiulara
 
+```shell
 Timpii aproximativi obtinuti sunt:
-Run=./tema2_neopt: N=400: Time=1.157325
-Run=./tema2_neopt: N=800: Time=9.290556
-Run=./tema2_neopt: N=1200: Time=32.165798
+    Run=./tema2_neopt: N=400: Time=1.157325
+    Run=./tema2_neopt: N=800: Time=9.290556
+    Run=./tema2_neopt: N=1200: Time=32.165798
+```
 
-#### 3. Metoda OPTIMIZATA
+#### ► Metoda OPTIMIZATA
 
 Se aduc imbunatatiri codului de la varianta neoptimizata pentru obtinerea unor timpi radical mai buni, avand
 insa aceeasi complexitate. Imbunatatirile se fac in principal prin optimizarea constantelor si al accesului 
@@ -84,30 +91,22 @@ la vectori si prin optimizarea buclelor.
 deferentiere. 
 - Am folosit `register` pentru a utiliza optim acea resursa.
 - Pentru functia `multiply_matrix` se foloseste si optimizarea prin folosirea unei bucle `k-i-j`, care acceseaza memoria intr-un mod mai eficient si aduce performante mai bune.  
-
+```shell
 Timpii aproximativi obtinuti sunt:
-Run=./tema2_opt_m: N=400: Time=0.352998
-Run=./tema2_opt_m: N=800: Time=2.780238
-Run=./tema2_opt_m: N=1200: Time=9.409059
-
-## Analiza Valgrind
-Pentru rularea cu memcheck, tema nu prezinta probleme cu accesul la memorie. La rularea cu cachegrind se observa rata de miss pentru fiecare metoda.  Matricea fiind reprezentata ca o linie, miss-uri sunt mai rare, deci timpul de executie este mai mic.
-
-Rata de miss este de 0.00%, atat pentru instructiuni cat si pentru date, indiferent de varianta aleasa. 
-Acest lucru se datoreaza metodei de reprezentare a matricei.
-
-
-
+    Run=./tema2_opt_m: N=400: Time=0.352998
+    Run=./tema2_opt_m: N=800: Time=2.780238
+    Run=./tema2_opt_m: N=1200: Time=9.409059
+```
 
 ## Compararea Rezultatelor
 Graficele se afla in folderul `graphs` si contin interpretarea valorilor lui N din intervalul
-[400, 800, 1000, 1200, 1400, 1600]. Am ales sa reprezint grafic diferenta dintre timpii de rulare obtinuti. 
+[400, 800, 1000, 1200, 1400, 1600]. Am ales sa reprezint grafic diferenta dintre timpii de rulare obtinuti ( `grafic_comparare` ).
 
-Din graficul `grafic_comparare`  se observa ca metoda cu BLAS este cea mai avantajoasa, folosind functii specializate in lucrul cu operatii pe matrici. De exemplu, pentru N=1200, se obtine
+- Se observa ca metoda cu BLAS este cea mai avantajoasa, folosind functii specializate in lucrul cu operatii pe matrici. De exemplu, pentru N=1200, se obtine
 blas=0.85s si opt_m=9.4s, deci un timp de 11 ori mai bun in cazul BLAS. Graficul metodei BLAS
 este aproape o dreapta conparativ cu celelalte.
 
-Fata de varianta neoptimizata, metoda optimizata este de aproximativ 70% mai buna pentru timpii mari.
+- Fata de varianta neoptimizata, metoda optimizata este de aproximativ 70% mai buna pentru timpii mari.
 De exemplu, pentru N=1200, se obtine neopt=32s si opt_m=9.4s. Prin urmare, folosirea pointerilor,
 accesul direct la memorie si ordonarea buclelor permit o optimizare radicala a rezultatelor.
 
