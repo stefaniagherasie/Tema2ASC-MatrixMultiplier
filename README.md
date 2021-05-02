@@ -26,6 +26,7 @@ Tema are urmatoarea organizare:
 - `graphs` - folder cu graficele de comparare
 
 ## Rulare si Testare
+Rularea si Testarea si realizeaza pe **cluster**(username @fep.grid.pub.ro), pe coada `ibm-nehalem.q`
 În urma rulării comenzii `make` vor rezulta 3 fișiere binare: `tema2_blas`, `tema2_neopt` si `tema2_opt_m`.
 ```shell
     ./tema2_<mod> <input_file> 
@@ -37,6 +38,7 @@ Tema are urmatoarea organizare:
     - valoarea lui N.
     - seed-ul folosit la generarea datelor.
     - calea către fișierul de ieșire ce conține matricea rezultat.
+
 
 ## Implementare
 
