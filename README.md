@@ -49,18 +49,18 @@ Testarea se face folosind utilitarul `compare`
 
 Am folosit functiile BLAS Atlas pentru a realiza eficient inmultirea matricilor. Deoarece A 
 este o matrice superior triunghiulara, am folosit pentru inmultirea `M = A x B` functia [cblas_dtrmm].
-Pentru inmultirea `P = At x A` am folosit aceeasi functie, schimband un parametru care calculeaza transpusa
-matricei A, care este inferior triunghiulara. <br>
+Pentru inmultirea `P = At x A` am folosit aceeasi functie, schimband un parametru care calculeaza transpusa matricei A, care este inferior triunghiulara.
+
 Pentru operatia `M x Bt + P` se foloseste functia [cblas_dgemm] care realizeaza inmultirea dintre 2 matrici
-oarecare si adunarea cu o a treia matrice in acelasi timp, astfel obtinand rezultatul operatiei cerute. <br>
-Am implementat functia `make_copy` care intoarce o copie a unei matrice, folosita pentru rezultate intermediare
-ale functiilor BLAS.
+oarecare si adunarea cu o a treia matrice in acelasi timp, astfel obtinand rezultatul operatiei cerute. 
+
+Am implementat functia `make_copy` care intoarce o copie a unei matrice, folosita pentru rezultate intermediare ale functiilor BLAS.
 
 Timpii aproximativi de rulare sunt:
 >    Run=./tema2_blas: N=400: Time=0.058715 <br>
 >    Run=./tema2_blas: N=800: Time=0.272988 <br>
 >    Run=./tema2_blas: N=1200: Time=0.848344 <br>
-
+<br>
 
 #### ► Metoda NEOPTIMIZATA
 
@@ -77,6 +77,7 @@ Timpii aproximativi de rulare sunt:
 >    Run=./tema2_neopt: N=400: Time=1.157325 <br>
 >    Run=./tema2_neopt: N=800: Time=9.290556 <br>
 >    Run=./tema2_neopt: N=1200: Time=32.165798
+<br>
 
 #### ► Metoda OPTIMIZATA
 
@@ -92,7 +93,6 @@ Timpii aproximativi de rulare sunt:
 >    Run=./tema2_opt_m: N=400: Time=0.352998 <br>
 >    Run=./tema2_opt_m: N=800: Time=2.780238 <br>
 >    Run=./tema2_opt_m: N=1200: Time=9.409059 <br>
-
 
 ## Compararea Rezultatelor
 Graficele se afla in folderul `graphs` si contin interpretarea valorilor lui N din intervalul
