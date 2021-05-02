@@ -41,7 +41,7 @@ Tema are urmatoarea organizare:
 
 Am folosit functiile BLAS Atlas pentru a realiza eficient inmultirea matricilor. Deoarece A 
 este o matrice superior triunghiulara, am folosit pentru inmultirea `M = A x B` functia [cblas_dtrmm].
-Pentru inmultirea `P = At x A` am folosit aceeasi functie, schimband un parametru de care face transpusa
+Pentru inmultirea `P = At x A` am folosit aceeasi functie, schimband un parametru care calculeaza transpusa
 matricei A, care este inferior triunghiulara. <br>
 Pentru operatia `M x Bt + P` se foloseste functia [cblas_dgemm] care realizeaza inmultirea dintre 2 matrici
 oarecare si adunarea cu o a treia matrice in acelasi timp, astfel obtinand rezultatul operatiei cerute. <br>
