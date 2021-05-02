@@ -93,7 +93,8 @@ la vectori si prin optimizarea buclelor.
 - Accesul la matrice se face folosind pointeri pentru a realiza mai rapid operatia de inmultire, renuntandu-se la 
 deferentiere. 
 - Am folosit `register` pentru a utiliza optim acea resursa.
-- Pentru functia `multiply_matrix` se foloseste si optimizarea prin folosirea unei bucle `k-i-j`, care acceseaza memoria intr-un mod mai eficient si aduce performante mai bune.  
+- Pentru functia `multiply_matrix` se foloseste si optimizarea prin folosirea unei bucle `k-i-j`, care acceseaza memoria intr-un mod mai eficient si aduce performante mai bune. 
+
 Timpii aproximativi de rulare sunt:
 >    Run=./tema2_opt_m: N=400: Time=0.352998 <br>
 >    Run=./tema2_opt_m: N=800: Time=2.780238 <br>
