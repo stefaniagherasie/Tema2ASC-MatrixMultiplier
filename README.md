@@ -1,7 +1,9 @@
 # Tema2ASC-MatrixMultiplier
 [Tema2 - Arhitectura Sistemelor de Calcul] <br>
 Tema presupune realizarea unei operatii de inmultire de matrici in 3 moduri. <br>
-Enuntul se gaseste [aici](https://ocw.cs.pub.ro/courses/asc/teme/tema2).
+> Enuntul se gaseste [aici](https://ocw.cs.pub.ro/courses/asc/teme/tema2).
+> 
+> Scheletul de cod se gaseste [aici](https://ocw.cs.pub.ro/courses/_media/asc/tema2/skel.zip).
 
 ## Descriere 
 Se dă următoarea operație cu matrice, unde A si B sunt matrice patratice NxN, iar A este matrice **superior triunghiulara**:
@@ -21,6 +23,7 @@ Tema are urmatoarea organizare:
 - `solver_neopt.c` - implementarea variantei neopt.
 - `solver_opt.c` - implementarea variantei opt_m.
 - `compare.c` - utilitar ce poate fi folosit pentru a compara doua fisiere rezultat
+- `graphs` - folder cu graficele de comparare
 
 ## Rulare si Testare
 În urma rulării comenzii `make` vor rezulta 3 fișiere binare: `tema2_blas`, `tema2_neopt` si `tema2_opt_m`.
