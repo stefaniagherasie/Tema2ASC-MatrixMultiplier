@@ -45,7 +45,7 @@ Pentru inmultirea `P = At x A` am folosit aceeasi functie, schimband un parametr
 matricei A, care este inferior triunghiulara. <br>
 Pentru operatia `M x Bt + P` se foloseste functia [cblas_dgemm] care realizeaza inmultirea dintre 2 matrici
 oarecare si adunarea cu o a treia matrice in acelasi timp, astfel obtinand rezultatul operatiei cerute. <br>
-Am implementat functia `make_copy` care realizeaza o copie a unei matrice, folosita pentru rezultate intermediare
+Am implementat functia `make_copy` care intoarce o copie a unei matrice, folosita pentru rezultate intermediare
 ale functiilor BLAS.
 
 Timpii aproximativi obtinuti sunt:
