@@ -98,6 +98,7 @@ Timpii aproximativi de rulare sunt:
 >    Run=./tema2_opt_m: N=400: Time=0.352998 <br>
 >    Run=./tema2_opt_m: N=800: Time=2.780238 <br>
 >    Run=./tema2_opt_m: N=1200: Time=9.409059 <br>
+<br>
 
 ## Compararea Rezultatelor
 Graficele se afla in folderul `graphs` si contin interpretarea valorilor lui N din intervalul
