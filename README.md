@@ -85,6 +85,30 @@ Run=./tema2_opt_m: N=400: Time=0.352998
 Run=./tema2_opt_m: N=800: Time=2.780238
 Run=./tema2_opt_m: N=1200: Time=9.409059
 
+## Analiza Valgrind
+Pentru rularea cu memcheck, tema nu prezinta probleme cu accesul la memorie. La rularea cu cachegrind se observa rata de miss pentru fiecare metoda.  Matricea fiind reprezentata ca o linie, miss-uri sunt mai rare, deci timpul de executie este mai mic.
+
+Rata de miss este de 0.00%, atat pentru instructiuni cat si pentru date, indiferent de varianta aleasa. 
+Acest lucru se datoreaza metodei de reprezentare a matricei.
+
+
+
+
+## Compararea Rezultatelor
+Graficele se afla in folderul `graphs` si contin interpretarea valorilor lui N din intervalul
+[400, 800, 1000, 1200, 1400, 1600]. Am ales sa reprezint grafic diferenta dintre timpii de rulare obtinuti. 
+
+Din graficul `grafic_comparare`  se observa ca metoda cu BLAS este cea mai avantajoasa, folosind functii specializate in lucrul cu operatii pe matrici. De exemplu, pentru N=1200, se obtine
+blas=0.85s si opt_m=9.4s, deci un timp de 10 ori mai bun in cazul BLAS. Graficul metodei BLAS
+este aproape o dreapta conparativ cu celelalte.
+
+Fata de varianta neoptimizata, metoda optimizata este de aproximativ 70% mai buna pentru timpii mari.
+De exemplu, pentru N=1200, se obtine neopt=32s si opt_m=9.4s. Prin urmare, folosirea pointerilor,
+accesul direct la memorie si ordonarea buclelor permit o optimizare radicala a rezultatelor.
+
+Am realizat si grafice individuale cu timpii pentru fiecare metoda, pentru a observa ca timpii tind
+sa creasca in acelasi mod pe masura ce creste N, indiferent de metoda folosita.
+
 
 ## Bibliografie
 1. http://www.netlib.org/blas/
