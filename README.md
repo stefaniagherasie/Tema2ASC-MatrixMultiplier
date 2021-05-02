@@ -57,7 +57,7 @@ Se folosesc inmultirile normale de matrice, fara vreo imbunatatire care sa optim
 realizeaza tinand cont ca matricea A este superior triunghiulara, avand functii separate pentru inmultirea cu
 matricea triunghilara.
 - `add_matrix` - aduna 2 matrici
-- `transpose_matrix` si `transpose_upper_matrix` - obtine transpusa unei matrici normale/superior triunghilare
+- `transpose_matrix` si `transpose_upper_matrix` - obtine transpusa unei matrici normale/superior triunghiulare
 - `multiply_matrix` - inmulteste 2 matrici oarecare
 - `multiply_upper_matrix` si `multiply_lower_matrix` - restange conditiile din bucle pentru a diminua calculele 
 cand matricea din stanga e superior/inferior triunghiulara
