@@ -111,7 +111,7 @@ sa creasca in acelasi mod pe masura ce creste N, indiferent de metoda folosita.
 blas=0.85s si opt_m=9.4s, deci un timp de 11 ori mai bun in cazul BLAS. Graficul metodei BLAS
 este aproape o dreapta comparativ cu celelalte.
 
-- Fata de varianta neoptimizata, metoda optimizata este de aproximativ 70% mai buna pentru timpii mari.
+- Fata de varianta neoptimizata, metoda optimizata este de aproximativ 70% mai buna pentru valori mari ale lui N.
 De exemplu, pentru N=1200, se obtine neopt=32s si opt_m=9.4s. Prin urmare, folosirea pointerilor,
 accesul direct la memorie si ordonarea buclelor permit o optimizare radicala a rezultatelor.
 
