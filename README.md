@@ -103,7 +103,7 @@ Timpii aproximativi de rulare sunt:
 
 ## Compararea Rezultatelor
 Graficele se afla in folderul `graphs` si contin interpretarea valorilor lui N din intervalul
-[400, 800, 1000, 1200, 1400, 1600].  Am ales sa reprezint grafic diferenta dintre timpii de rulare obtinuti (`grafic_comparare`).
+[400, 800, 1000, 1200, 1400, 1600].  Am ales sa reprezint grafic diferenta dintre timpii de rulare obtinuti (`graph_compare`).
 Am realizat si grafice individuale cu timpii pentru fiecare metoda, pentru a observa ca timpii tind
 sa creasca in acelasi mod pe masura ce creste N, indiferent de metoda folosita.
 
