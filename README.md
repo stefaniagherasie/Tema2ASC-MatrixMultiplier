@@ -43,8 +43,7 @@ Testarea se face folosind utilitarul `compare`.
    - valoarea lui N.
    - seed-ul folosit la generarea datelor.
    - calea către fișierul de ieșire ce conține matricea rezultat.
-<br>
-
+ 
 
 ## Implementare
 
