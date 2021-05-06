@@ -32,11 +32,6 @@ Rularea si testarea se realizeaza pe **cluster** (username@fep.grid.pub.ro), pe 
     ./tema2_<mod> <input_file> 
 ```
 
-Testarea se face folosind utilitarul `compare`.
-```shell
-    ./compare  out1  /export/asc/tema2/out1  <tolerance>
-```
-
 **Fișierul de input** este structurat astfel:
 - pe prima linie numărul de teste.
 - pe următoarele linii descrierea fiecarui test:
@@ -44,6 +39,11 @@ Testarea se face folosind utilitarul `compare`.
    - seed-ul folosit la generarea datelor.
    - calea către fișierul de ieșire ce conține matricea rezultat.
  
+
+Testarea se face folosind utilitarul `compare`.
+```shell
+    ./compare  out1  /export/asc/tema2/out1  <tolerance>
+```
 
 ## Implementare
 
