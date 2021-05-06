@@ -32,7 +32,7 @@ Rularea si testarea se realizeaza pe **cluster** (username@fep.grid.pub.ro), pe 
     ./tema2_<mod> <input_file> 
 ```
 
-**Fișierul de input** este structurat astfel:
+Fișierul de input este structurat astfel:
 - pe prima linie numărul de teste.
 - pe următoarele linii descrierea fiecarui test:
    - valoarea lui N.
