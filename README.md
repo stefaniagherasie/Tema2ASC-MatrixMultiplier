@@ -36,7 +36,6 @@ Testarea se face folosind utilitarul `compare`.
 ```shell
     ./compare  out1  /export/asc/tema2/out1  <tolerance>
 ```
-<br>
 
 **Fișierul de input** este structurat astfel:
 - pe prima linie numărul de teste.
