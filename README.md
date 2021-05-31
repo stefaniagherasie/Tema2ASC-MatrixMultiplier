@@ -27,7 +27,7 @@ Tema are urmatoarea organizare:
 ## Rulare si Testare
 Rularea si testarea se realizeaza pe **cluster** (username@fep.grid.pub.ro), pe coada `ibm-nehalem.q`.
 
-În urma rulării comenzii `make` vor rezulta 3 fișiere binare: `tema2_blas`, `tema2_neopt` si `tema2_opt_m`.
+In urma rularii comenzii `make` vor rezulta 3 fișiere binare: `tema2_blas`, `tema2_neopt` si `tema2_opt_m`.
 ```shell
     ./tema2_<mod> <input_file> 
 ```
