@@ -1,5 +1,5 @@
 # Tema2ASC-MatrixMultiplier
-[Tema2 - Arhitectura Sistemelor de Calcul] <br>
+[Tema2 - Arhitectura Sistemelor de Calcul] <br> 
 Tema presupune realizarea unei operatii de inmultire de matrici in 3 moduri.
 > Enuntul se gaseste [aici](https://ocw.cs.pub.ro/courses/asc/teme/tema2). <br>
 > Scheletul de cod se gaseste [aici](https://ocw.cs.pub.ro/courses/_media/asc/tema2/skel.zip).
